@@ -8,21 +8,25 @@
 </header>
 
 
-
-<slot />
+<main>
+    <slot />
+</main>
 
 
 <style>
     header {
         background-color: #6B705C;
         height: 20dvh;
-        color: #fff;
+        color: #e3e3e3;
     }
     .header-title {
-        display: flex;
+        display: grid;
         height: 20dvh;
         margin: 0 auto;
         width: fit-content;
         align-items: center;
+    }
+    main {
+        background-color: #e3e3e3;
     }
 </style>
