@@ -13,10 +13,10 @@ let stateNames = states
 
 <style>
     .state-names {
-        width: 90dvw;
+        width: 80dvw;
         display: grid;
         margin:  0 auto;
-        height: 80dvh;
+        height: 85dvh;
         grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
         row-gap: 1em;
     }
@@ -26,6 +26,7 @@ let stateNames = states
     }
     .names {
         margin-top: 1em;
+        margin: 1em auto 0 auto;
     }
     a:hover {
         color: #B7B7A4

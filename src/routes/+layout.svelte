@@ -16,7 +16,7 @@
 <style>
     header {
         background-color: #6B705C;
-        height: 20dvh;
+        height: 15dvh;
         color: #e3e3e3;
     }
     .header-title {
