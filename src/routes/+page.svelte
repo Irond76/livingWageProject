@@ -6,7 +6,7 @@ let stateNames = states
 <div class="state-names">
     {#each stateNames as states}
     <div class="names">
-        <a href="/">{states.state}</a> 
+        <a href={states.state}>{states.state}</a> 
     </div>
     {/each}
 </div>
