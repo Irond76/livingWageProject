@@ -3,15 +3,23 @@ import  { DataSingleAdult } from '../../data/AlabamaData';
 import { DataSingleAdultOneChild } from '../../data/AlabamaData';
 import { DataSingleAdultTwoChildren } from '../../data/AlabamaData';
 import { DataSingleAdultThreeChildren } from '../../data/AlabamaData';
+import { DataTwoAdults } from '../../data/AlabamaData';
+import { DataTwoAdultsOneChild } from '../../data/AlabamaData';
+import { DataTwoAdultsTwoChildren } from '../../data/AlabamaData';
+import { DataTwoAdultsThreeChildren } from '../../data/AlabamaData';
 
 const singleAdult = DataSingleAdult;
 const adultOneChild = DataSingleAdultOneChild;
 const adultTwoChildren = DataSingleAdultTwoChildren;
 const adultThreeChildren = DataSingleAdultThreeChildren;
-console.log(singleAdult);
-console.log(adultOneChild);
-console.log(adultTwoChildren);
-console.log(adultThreeChildren);
+const twoAdults = DataTwoAdults;
+const twoAdultsOneChild = DataTwoAdultsOneChild;
+const twoAdultsTwoChildren = DataTwoAdultsTwoChildren;
+const twoAdultsThreeChildren = DataTwoAdultsThreeChildren
+// console.log(twoAdults);
+// console.log(twoAdultsOneChild);
+// console.log(twoAdultsTwoChildren);
+// console.log(twoAdultsThreeChildren);
 </script>
 
-<h1>Alabama Coming Soon</h1>
+<h1>Alabama</h1>

@@ -13,35 +13,73 @@ export const DataSingleAdult = {
     adult: {
         stateMinimumWage: wage,
         stateLivingWage: oneAdultlivingWage,
-        annualStateMinimumWage: annualStateMinimumWage,
-        annualLivingWage: oneAdultlivingWage * yearlyHours,
+        annualStateMinimumWage: parseFloat(annualStateMinimumWage).toFixed(2),
+        annualLivingWage: parseFloat(oneAdultlivingWage * yearlyHours).toFixed(2)
     }
 };
 export const DataSingleAdultOneChild = {
     adultOneChild: {
         stateMinimumWage: wage,
         stateLivingWage: oneAdultlivingWageOneChild,
-        annualStateMinimumWage: annualStateMinimumWage,
-        annualLivingWage: oneAdultlivingWageOneChild * yearlyHours
+        annualStateMinimumWage: parseFloat(annualStateMinimumWage).toFixed(2),
+        annualLivingWage: parseFloat(oneAdultlivingWageOneChild * yearlyHours).toFixed(2)
     }
 };
 export const DataSingleAdultTwoChildren = {
     adultTwoChildren: {
         stateMinimumWage: wage,
         stateLivingWage: oneAdultlivingWageTwoChildren,
-        annualStateMinimumWage: annualStateMinimumWage,
-        annualLivingWage: oneAdultlivingWageTwoChildren * yearlyHours
+        annualStateMinimumWage: parseFloat(annualStateMinimumWage).toFixed(2),
+        annualLivingWage: parseFloat(oneAdultlivingWageTwoChildren * yearlyHours).toFixed(2)
     }
 };
 export const DataSingleAdultThreeChildren = {
     adultThreeChildren: {
         stateMinimumWage: wage,
         stateLivingWage: oneAdultlivingWageThreeChildren,
-        annualStateMinimumWage: annualStateMinimumWage,
-        annualLivingWage: oneAdultlivingWageThreeChildren * yearlyHours
+        annualStateMinimumWage: parseFloat(annualStateMinimumWage).toFixed(2),
+        annualLivingWage: parseFloat(oneAdultlivingWageThreeChildren * yearlyHours).toFixed(2)
     }
 };
 
+//  Two Adults One Working Data =========================
+const twoAdultsLivingWage = 25.54;
+const twoAdultsLivingWageOneChild = 31.89;
+const twoAdultsLivingWageTwoChildren = 37.05;
+const twoAdultsLivingWageThreeChildren = 40.91;
 
+export const DataTwoAdults = {
+    twoAdults: {
+        stateMinimumWage: wage,
+        stateLivingWage: twoAdultsLivingWage,
+        annualStateMinimumWage: parseFloat(annualStateMinimumWage).toFixed(2),
+        annualLivingWage: parseFloat(twoAdultsLivingWage * yearlyHours).toFixed(2)
+    }
+};
+export const DataTwoAdultsOneChild = {
+    twoAdultsOneChild: {
+        stateMinimumWage: wage,
+        stateLivingWage: twoAdultsLivingWageOneChild,
+        annualStateMinimumWage: parseFloat(annualStateMinimumWage).toFixed(2),
+        annualLivingWage: parseFloat(twoAdultsLivingWageOneChild * yearlyHours).toFixed(2)
+    }
+};
+export const DataTwoAdultsTwoChildren = {
+    twoAdultsTwoChildren: {
+        stateMinimumWage: wage,
+        stateLivingWage: twoAdultsLivingWageTwoChildren,
+        annualStateMinimumWage: parseFloat(annualStateMinimumWage).toFixed(2),
+        annualLivingWage: parseFloat(twoAdultsLivingWageTwoChildren * yearlyHours).toFixed(2)
+    }
+};
+export const DataTwoAdultsThreeChildren = {
+    twoAdultsThreeChildren: {
+        stateMinimumWage: wage,
+        stateLivingWage: twoAdultsLivingWageThreeChildren,
+        annualStateMinimumWage: parseFloat(annualStateMinimumWage).toFixed(2),
+        annualLivingWage: parseFloat(twoAdultsLivingWageThreeChildren * yearlyHours).toFixed(2)
+    }
+};
+// ======================================================
 
 
