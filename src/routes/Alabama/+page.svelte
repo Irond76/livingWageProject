@@ -8,6 +8,7 @@ import { DataTwoAdultsOneChild } from '../../data/AlabamaData';
 import { DataTwoAdultsTwoChildren } from '../../data/AlabamaData';
 import { DataTwoAdultsThreeChildren } from '../../data/AlabamaData';
 import { DataIndustryWages } from '../../data/AlabamaData';
+import img from '$lib/images/alabama.webp';
 
 // Single Adult Data ===============================================
 const singleAdult = DataSingleAdult;
@@ -29,5 +30,24 @@ const industrieSalaries = DataIndustryWages;
 
 
 </script>
+<header>
+    <div class="state-header-container">
+        <h1>Alabama</h1>
+        <img src={img} alt="alabama">
+    </div>
+</header>
 
-<h1>Alabama</h1>
+
+<style>
+     header {
+        background-color: #6B705C;
+        height: fit-content;
+        color: #e3e3e3;
+        padding: 1em 0;
+    }
+    .state-header-container {
+        text-align: center;
+    }
+
+
+</style>

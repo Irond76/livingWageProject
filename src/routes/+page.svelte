@@ -3,6 +3,14 @@ import { states } from '../data/StatesList';
 let stateNames = states
 </script>
 
+<header>
+    <div class="header-title">
+        <div>
+            <h1>Living Wage By State</h1>
+        </div>
+
+    </div>
+</header>
 <div class="state-names">
     {#each stateNames as states}
     <div class="names">
@@ -31,4 +39,17 @@ let stateNames = states
     a:hover {
         color: #B7B7A4
     }
+    header {
+        background-color: #6B705C;
+        height: 20dvh;
+        color: #e3e3e3;
+    }
+    .header-title {
+        display: grid;
+        height: 20dvh;
+        margin: 0 auto;
+        width: fit-content;
+        align-items: center;
+    }
+    
 </style>
