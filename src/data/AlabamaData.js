@@ -83,3 +83,24 @@ export const DataTwoAdultsThreeChildren = {
 // ======================================================
 
 
+export const DataIndustryWages = {
+    Management: 104355.00,
+    BusinessFinancial: 69647,
+    ComputerMathematical: 88071.00,
+    ArchitectureEngineering: 90959,
+    CommunitySocialService: 50187.00,
+    Legal: 80937,
+    Education: 54829.00,
+    HealthcarePractitioners: 65358.00,
+    HealthcareSupport: 28015.00,
+    ProtectiveServices: 41797.00,
+    FoodServiceRelated: 22811.00,
+    BuildingGroundsCleaningMaintenance: 26516.00,
+    SalesRelated: 31290.00,
+    OfficeAdministrativeSupport: 39636.00,
+    FarmingFishingForestry: 34906.00,
+    ConstructionExtraction: 41951.00,
+    InstallationMaintenanceRepair: 52238.00,
+    Production: 39791.00,
+    TransportationMaterialMoving: 33197.00
+};

@@ -7,6 +7,7 @@ import { DataTwoAdults } from '../../data/AlabamaData';
 import { DataTwoAdultsOneChild } from '../../data/AlabamaData';
 import { DataTwoAdultsTwoChildren } from '../../data/AlabamaData';
 import { DataTwoAdultsThreeChildren } from '../../data/AlabamaData';
+import { DataIndustryWages } from '../../data/AlabamaData';
 
 // Single Adult Data ===============================================
 const singleAdult = DataSingleAdult;
@@ -22,11 +23,11 @@ const twoAdultsTwoChildren = DataTwoAdultsTwoChildren;
 const twoAdultsThreeChildren = DataTwoAdultsThreeChildren
 // =================================================================
 
+// Industry Data ===================================================
+const industrieSalaries = DataIndustryWages;
+// =================================================================
 
-// console.log(twoAdults);
-// console.log(twoAdultsOneChild);
-// console.log(twoAdultsTwoChildren);
-// console.log(twoAdultsThreeChildren);
+
 </script>
 
 <h1>Alabama</h1>
