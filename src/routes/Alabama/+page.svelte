@@ -11,6 +11,7 @@ import { DataTwoAdultsThreeChildren } from '../../data/AlabamaData';
 import { DataIndustryWages } from '../../data/AlabamaData';
 import img from '$lib/images/alabama.webp';
 
+
 // Single Adult Data ===============================================
 const singleAdult = DataSingleAdult;
 const adultOneChild = DataSingleAdultOneChild;
@@ -902,30 +903,54 @@ function industryChart1() {
     }
   });
 }
+// Initialize State===============
+let showAllData = true;
+let compareWage = false;
+// ===============================
+
+function showData() {
+    const chartData = document.querySelector('.div');
+    const compareWageData = document.querySelector('.compare');
+    showAllData = true;
+    compareWage = false;
+  if (compareWage === false) {
+    compareWageData.classList.add('hidden');
+    chartData.classList.remove('hidden');
+  }
+}
+function showCompare() {
+  const chartData = document.querySelector('.div');
+  const compareWageData = document.querySelector('.compare');
+  showAllData = false;
+  compareWage = true;
+  if (showAllData === false) {
+    chartData.classList.add('hidden');
+    compareWageData.classList.remove('hidden')
+  }
+}
 // ==================================================================
 onMount(() => {
-    singleChart1(),
-    singleChart2(),
-    singleChart3(),
-    singleChart4(),
-    singleChart5(),
-    singleChart6(),
-    singleChart7(),
-    singleChart8(),
-    couplesChart1(),
-    couplesChart2(),
-    couplesChart3(),
-    couplesChart4(),
-    couplesChart5(),
-    couplesChart6(),
-    couplesChart7(),
-    couplesChart8(),
-    industryChart1()
+  singleChart1(),
+  singleChart2(),
+  singleChart3(),
+  singleChart4(),
+  singleChart5(),
+  singleChart6(),
+  singleChart7(),
+  singleChart8(),
+  couplesChart1(),
+  couplesChart2(),
+  couplesChart3(),
+  couplesChart4(),
+  couplesChart5(),
+  couplesChart6(),
+  couplesChart7(),
+  couplesChart8(),
+  industryChart1()
 })
 onDestroy(() => {
-    return {}
+  return {}
 })
-
 
 </script>
 <header>
@@ -934,7 +959,14 @@ onDestroy(() => {
         <img src={img} alt="alabama">
     </div>
 </header>
+
+<main class="light-background">
+  <button on:click={showData}>All Data</button>
+  <button on:click={showCompare}>Compare Your Wage</button>
+</main>
+
 <!-- Single Adult Section -->
+<div class="div ">
 <main class="light-background">
     <h3>Single Adult With No Children</h3>
     <div class="chart-one">
@@ -1036,9 +1068,26 @@ onDestroy(() => {
       <canvas id="myChart-17"></canvas>
     </div>
 </main>
+</div>
+
+<div class="compare hidden">
+  <h1>This is where compare wages go</h1>
+</div>
 
 
 <style>
+    button {
+      border: none;
+      border-radius: .2em;
+      padding: .4em;
+      margin: .2em 0;
+      background-color: #6B705C;
+      color: #fff;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #424242;
+    }
      header {
         background-color: #6B705C;
         height: 40dvh;
@@ -1074,5 +1123,7 @@ onDestroy(() => {
     .industry {
       height: 80dvh;
     }
-
+    :global(.hidden) {
+      display: none;
+    }
 </style>
