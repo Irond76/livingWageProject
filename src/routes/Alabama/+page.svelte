@@ -1,5 +1,5 @@
 <script>
-import { onMount } from 'svelte';
+import { onMount, onDestroy } from 'svelte';
 import  { DataSingleAdult } from '../../data/AlabamaData';
 import { DataSingleAdultOneChild } from '../../data/AlabamaData';
 import { DataSingleAdultTwoChildren } from '../../data/AlabamaData';
@@ -35,15 +35,17 @@ function createchart1() {
   new Chart(ctx, {
     type: 'bar',
     data: {
-      labels: ["State Minimum Wage", "State Living Wage"],
+      labels: ["Minimum Wage", "Living Wage"],
       datasets: [{
         data: [`${singleAdult.adult.stateMinimumWage}`, `${singleAdult.adult.stateLivingWage}`],
         borderWidth: 1,
-        backgroundColor: ['#a98467', '#FFE8D6'], 
+        backgroundColor: ['#7f5539', '#FFE8D6'], 
         barPercentage: .75
       }],
     },
     options: {
+        responsive: true,
+        maintainAspectRatio: false,
         indexAxis: 'y',
       scales: {
         x: {
@@ -69,7 +71,7 @@ function createchart1() {
       plugins: {
         title: {
                 display: true,
-                text: 'Minimum Wage Vs. Living Wage',
+                text: 'Minimum Wage Vs. Living Wage in $',
                 color: '#fff'
             },
         legend: {
@@ -79,9 +81,65 @@ function createchart1() {
     }
   });
 }
-onMount(
-    createchart1
-)
+function createchart2() {
+    const ctx1 = document.getElementById('myChart-2');
+  new Chart(ctx1, {
+    type: 'bar',
+    data: {
+      labels: ["Minimum Wage Annual", "Living Wage Annual"],
+      datasets: [{
+        data: [`${singleAdult.adult.annualStateMinimumWage}`, `${singleAdult.adult.annualLivingWage}`],
+        borderWidth: 1,
+        backgroundColor: ['#7f5539', '#FFE8D6'], 
+        barPercentage: .75
+      }],
+    },
+    options: {
+        indexAxis: 'y',
+        responsive: true,
+        maintainAspectRatio: false,
+      scales: {
+        x: {
+            ticks: {
+                color: '#fff'
+            },
+        grid: {
+            drawTicks: false,
+            color: '#525252'
+        },
+        },
+        y: {
+          beginAtZero: true,
+          ticks: {
+            color: '#fff'
+          },
+          grid: {
+            drawTicks: false,
+            color: '#525252'
+        }
+        }
+      },
+      plugins: {
+        title: {
+                display: true,
+                text: 'Annual Wages in $',
+                color: '#fff'
+            },
+        legend: {
+                display: false,
+        },
+      }
+    }
+  });
+}
+onMount(() => {
+    createchart1(),
+    createchart2()
+})
+onDestroy(() => {
+    return {}
+})
+
 
 </script>
 <header>
@@ -91,10 +149,17 @@ onMount(
     </div>
 </header>
 <main>
+    <h3>Living Wage Data For Single Adult With No Children</h3>
     <div class="chart-one">
-        <canvas id="myChart" ></canvas>
+        <canvas id="myChart"></canvas>
       </div>
+      <h3>Annual Wages</h3>
+      <p>&#40;For Minimum Wage And Living Wage&#41</p>
+      <div class="chart-one">
+          <canvas id="myChart-2" ></canvas>
+        </div>
 </main>
+
 
 
 
@@ -111,17 +176,20 @@ onMount(
 
     .chart-one {
         display: grid;
-        width: 30dvw;
+        width: 40dvw;
         height: 30dvh;
         background-color: #424242;
         margin-top: 1em;
+        margin-bottom: 1em;
     }
     main {
         display: grid;
         width: 100dvw;
-        height: 60dvh;
+        height: fit-content;
         background-color: #B7B7A4;
         justify-items: center;
+        padding-top: 1em;
     }
+    
 
 </style>
