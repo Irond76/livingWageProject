@@ -82,7 +82,7 @@ export const DataTwoAdultsThreeChildren = {
 };
 // ======================================================
 
-
+// Industry Data ========================================
 export const DataIndustryWages = {
     Management: 104355.00,
     BusinessFinancial: 69647,
