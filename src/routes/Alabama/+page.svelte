@@ -1,5 +1,5 @@
 <script>
-import { onMount, onDestroy } from 'svelte';
+import { onMount, onDestroy, beforeUpdate, afterUpdate } from 'svelte';
 import  { DataSingleAdult } from '../../data/AlabamaData';
 import { DataSingleAdultOneChild } from '../../data/AlabamaData';
 import { DataSingleAdultTwoChildren } from '../../data/AlabamaData';
@@ -12,6 +12,14 @@ import { DataIndustryWages } from '../../data/AlabamaData';
 import img from '$lib/images/alabama.webp';
 
 
+
+// Your Wage Data =================================================
+$:yourWage = 0
+function handleOnSubmit() {
+    compareWageFunc();
+    compareWageFunc2();
+  }
+// ================================================================
 // Single Adult Data ===============================================
 const singleAdult = DataSingleAdult;
 const adultOneChild = DataSingleAdultOneChild;
@@ -903,6 +911,108 @@ function industryChart1() {
     }
   });
 }
+function compareWageFunc() {
+    const ctx20 = document.getElementById('myChart-20');
+  new Chart(ctx20, {
+    type: 'bar',
+    data: {
+      labels: ["Your Wage", "Living Wage"],
+      datasets: [{
+        data: [yourWage, `${singleAdult.adult.stateLivingWage}`],
+        borderWidth: 1,
+        backgroundColor: ['#7f5539', '#FFE8D6'], 
+        barPercentage: .75
+      }],
+    },
+    options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        indexAxis: 'y',
+      scales: {
+        x: {
+            ticks: {
+                color: '#fff'
+            },
+        grid: {
+            drawTicks: false,
+            color: '#525252'
+        },
+        },
+        y: {
+          beginAtZero: true,
+          ticks: {
+            color: '#fff'
+          },
+          grid: {
+            drawTicks: false,
+            color: '#525252'
+        }
+        }
+      },
+      plugins: {
+        title: {
+                display: true,
+                text: 'Your Wage Vs. Living Wage in $ per hour',
+                color: '#fff'
+            },
+        legend: {
+                display: false,
+        },
+      }
+    }
+  });
+}
+function compareWageFunc2() {
+    const ctx25 = document.getElementById('myChart-25');
+  new Chart(ctx25, {
+    type: 'bar',
+    data: {
+      labels: ["Your Annual Wage", "Annual Living Wage"],
+      datasets: [{
+        data: [yourWage * 2080, `${singleAdult.adult.annualLivingWage}`],
+        borderWidth: 1,
+        backgroundColor: ['#7f5539', '#FFE8D6'], 
+        barPercentage: .75
+      }],
+    },
+    options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        indexAxis: 'y',
+      scales: {
+        x: {
+            ticks: {
+                color: '#fff'
+            },
+        grid: {
+            drawTicks: false,
+            color: '#525252'
+        },
+        },
+        y: {
+          beginAtZero: true,
+          ticks: {
+            color: '#fff'
+          },
+          grid: {
+            drawTicks: false,
+            color: '#525252'
+        }
+        }
+      },
+      plugins: {
+        title: {
+                display: true,
+                text: 'Your Wage Vs. Living Wage in $ per hour',
+                color: '#fff'
+            },
+        legend: {
+                display: false,
+        },
+      }
+    }
+  });
+}
 // Initialize State===============
 let showAllData = true;
 let compareWage = false;
@@ -930,27 +1040,28 @@ function showCompare() {
 }
 // ==================================================================
 onMount(() => {
-  singleChart1(),
-  singleChart2(),
-  singleChart3(),
-  singleChart4(),
-  singleChart5(),
-  singleChart6(),
-  singleChart7(),
-  singleChart8(),
-  couplesChart1(),
-  couplesChart2(),
-  couplesChart3(),
-  couplesChart4(),
-  couplesChart5(),
-  couplesChart6(),
-  couplesChart7(),
-  couplesChart8(),
-  industryChart1()
-})
-onDestroy(() => {
-  return {}
-})
+  singleChart1();
+  singleChart2();
+  singleChart3();
+  singleChart4();
+  singleChart5();
+  singleChart6();
+  singleChart7();
+  singleChart8();
+  couplesChart1();
+  couplesChart2();
+  couplesChart3();
+  couplesChart4();
+  couplesChart5();
+  couplesChart6();
+  couplesChart7();
+  couplesChart8();
+  industryChart1();
+  return () => {
+  }
+});
+
+
 
 </script>
 <header>
@@ -962,11 +1073,11 @@ onDestroy(() => {
 
 <main class="light-background">
   <button on:click={showData}>All Data</button>
-  <button on:click={showCompare}>Compare Your Wage</button>
+  <button on:click|preventDefault={showCompare}>Compare Your Wage</button>
 </main>
 
 <!-- Single Adult Section -->
-<div class="div ">
+<div class="div " >
 <main class="light-background">
     <h3>Single Adult With No Children</h3>
     <div class="chart-one">
@@ -1071,11 +1182,32 @@ onDestroy(() => {
 </div>
 
 <div class="compare hidden">
-  <h1>This is where compare wages go</h1>
+  <main class="dark-background">
+    <h3 class="title">Your Wage Vs. Living Wage</h3>
+    <form on:change|preventDefault="{handleOnSubmit}">
+      <label for="yourWage">Enter Your Hourly Wage $
+      <input type="number" name="yourWage" bind:value={yourWage} step=".01"/>
+    </label>
+    </form>
+    <p class='btn-text'> You must refresh page to enter a new wage, click to
+    <button class="btn-2" on:click={() => location.reload()}>Refresh</button>
+  </p>
+    <div class="chart-one">
+        <canvas id="myChart-20"></canvas>
+    </div>
+    <h3>Annual Wages</h3>
+    <p>&#40;Your Wage Vs. Living Wage&#41</p>
+    <div class="chart-one">
+        <canvas id="myChart-25" ></canvas>
+    </div>
+  </main>
 </div>
 
 
 <style>
+  .title {
+    margin-bottom: 1em;
+  }
     button {
       border: none;
       border-radius: .2em;
@@ -1125,5 +1257,19 @@ onDestroy(() => {
     }
     :global(.hidden) {
       display: none;
+    }
+    label {
+      margin-bottom: 1em;
+    }
+    .btn-2 {
+      background-color: #424242;
+      color: #fff;
+    }
+    .btn-2:hover {
+      background-color: #fff;
+      color: #424242;
+    }
+    .btn-text {
+      margin: 1em 1em;
     }
 </style>

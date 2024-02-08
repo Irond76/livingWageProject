@@ -6,7 +6,7 @@ let stateNames = states
 <header>
     <div class="header-title">
         <div>
-            <h1>Living Wage By State</h1>
+            <h1>The Living Wage Project</h1>
         </div>
 
     </div>
