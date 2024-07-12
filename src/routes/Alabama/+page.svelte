@@ -1,5 +1,5 @@
 <script>
-import { onMount, onDestroy, beforeUpdate, afterUpdate } from 'svelte';
+import { onMount} from 'svelte';
 import  { DataSingleAdult } from '../../data/AlabamaData';
 import { DataSingleAdultOneChild } from '../../data/AlabamaData';
 import { DataSingleAdultTwoChildren } from '../../data/AlabamaData';
