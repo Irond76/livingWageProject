@@ -1064,143 +1064,146 @@
     
     
     </script>
-    <header>
-        <div class="state-header-container">
-            <h1>Wyoming</h1>
-            <img src={img} alt="arizona">
-        </div>
-    </header>
-    
-    <main class="light-background">
-      <button on:click={showData}>All Data</button>
-      <button on:click|preventDefault={showCompare}>Compare Your Wage</button>
-    </main>
-    
-    <!-- Single Adult Section -->
-    <div class="div " >
-    <main class="light-background">
-        <h3>Single Adult With No Children</h3>
-        <div class="chart-one">
-            <canvas id="myChart"></canvas>
-          </div>
-          <h3>Annual Wages</h3>
-          <p>&#40;For Minimum Wage And Living Wage&#41</p>
-          <div class="chart-one">
-              <canvas id="myChart-2" ></canvas>
+    <div class="container">
+
+        <header>
+            <div class="state-header-container">
+                <h1>Wyoming</h1>
+                <img src={img} alt="arizona">
             </div>
-    </main>
-    <main class="dark-background">
-        <h3>Single Adult With One Child</h3>
-        <div class="chart-one">
-            <canvas id="myChart-3"></canvas>
-          </div>
-          <h3>Annual Wages</h3>
-          <p>&#40;For Minimum Wage And Living Wage&#41</p>
+        </header>
+        
+        <main class="light-background">
+          <button on:click={showData}>All Data</button>
+          <button on:click|preventDefault={showCompare}>Compare Your Wage</button>
+        </main>
+        
+        <!-- Single Adult Section -->
+        <div class="div " >
+        <main class="light-background">
+            <h3>Single Adult With No Children</h3>
+            <div class="chart-one">
+                <canvas id="myChart"></canvas>
+              </div>
+              <h3>Annual Wages</h3>
+              <p>&#40;For Minimum Wage And Living Wage&#41</p>
+              <div class="chart-one">
+                  <canvas id="myChart-2" ></canvas>
+                </div>
+        </main>
+        <main class="dark-background">
+            <h3>Single Adult With One Child</h3>
+            <div class="chart-one">
+                <canvas id="myChart-3"></canvas>
+              </div>
+              <h3>Annual Wages</h3>
+              <p>&#40;For Minimum Wage And Living Wage&#41</p>
+              <div class="chart-one">
+                  <canvas id="myChart-4" ></canvas>
+                </div>
+        </main>
+        <main class="light-background">
+          <h3>Single Adult With Two Children</h3>
           <div class="chart-one">
-              <canvas id="myChart-4" ></canvas>
+              <canvas id="myChart-5"></canvas>
             </div>
-    </main>
-    <main class="light-background">
-      <h3>Single Adult With Two Children</h3>
-      <div class="chart-one">
-          <canvas id="myChart-5"></canvas>
+            <h3>Annual Wages</h3>
+            <p>&#40;For Minimum Wage And Living Wage&#41</p>
+            <div class="chart-one">
+                <canvas id="myChart-6" ></canvas>
+              </div>
+        </main>
+        <main class="dark-background">
+          <h3>Single Adult With Three Children</h3>
+          <div class="chart-one">
+              <canvas id="myChart-7"></canvas>
+            </div>
+            <h3>Annual Wages</h3>
+            <p>&#40;For Minimum Wage And Living Wage&#41</p>
+            <div class="chart-one">
+                <canvas id="myChart-8" ></canvas>
+              </div>
+        </main>
+        <!-- Couple Section -->
+        <main class="light-background">
+          <h3>Couples With No Children</h3>
+          <p>&#40;One Adult Working&#41</p>
+          <div class="chart-one">
+              <canvas id="myChart-9"></canvas>
+            </div>
+            <h3>Annual Wages</h3>
+            <p>&#40;For Minimum Wage And Living Wage&#41</p>
+            <div class="chart-one">
+                <canvas id="myChart-10" ></canvas>
+              </div>
+        </main>
+        <main class="dark-background">
+          <h3>Couples With One Child</h3>
+          <p>&#40;One Adult Working&#41</p>
+          <div class="chart-one">
+              <canvas id="myChart-11"></canvas>
+            </div>
+            <h3>Annual Wages</h3>
+            <p>&#40;For Minimum Wage And Living Wage&#41</p>
+            <div class="chart-one">
+                <canvas id="myChart-12" ></canvas>
+              </div>
+        </main>
+        <main class="light-background">
+          <h3>Couples With Two Children</h3>
+          <p>&#40;One Adult Working&#41</p>
+          <div class="chart-one">
+              <canvas id="myChart-13"></canvas>
+            </div>
+            <h3>Annual Wages</h3>
+            <p>&#40;For Minimum Wage And Living Wage&#41</p>
+            <div class="chart-one">
+                <canvas id="myChart-14" ></canvas>
+              </div>
+        </main>
+        <main class="dark-background">
+          <h3>Couples With Three Children</h3>
+          <p>&#40;One Adult Working&#41</p>
+          <div class="chart-one">
+              <canvas id="myChart-15"></canvas>
+            </div>
+            <h3>Annual Wages</h3>
+            <p>&#40;For Minimum Wage And Living Wage&#41</p>
+            <div class="chart-one">
+                <canvas id="myChart-16" ></canvas>
+              </div>
+        </main>
+        <!-- Industry Section -->
+        <main class="light-background " >
+          <h3>Industry Wages</h3>
+          <p>&#40; Average Annual &#41</p>
+          <div class="chart-one industry">
+              <canvas id="myChart-17"></canvas>
+            </div>
+        </main>
         </div>
-        <h3>Annual Wages</h3>
-        <p>&#40;For Minimum Wage And Living Wage&#41</p>
-        <div class="chart-one">
-            <canvas id="myChart-6" ></canvas>
-          </div>
-    </main>
-    <main class="dark-background">
-      <h3>Single Adult With Three Children</h3>
-      <div class="chart-one">
-          <canvas id="myChart-7"></canvas>
+        
+        <div class="compare hidden">
+          <main class="dark-background">
+            <h3 class="title">Your Wage Vs. Living Wage</h3>
+            <form on:change|preventDefault="{handleOnSubmit}">
+              <label for="yourWage">Enter Your Hourly Wage $
+              <input type="number" name="yourWage" bind:value={yourWage} step=".01"/>
+            </label>
+            </form>
+            <p class='btn-text'> You must refresh page to enter a new wage, click to
+            <button class="btn-2" on:click={() => location.reload()}>Refresh</button>
+          </p>
+            <div class="chart-one">
+                <canvas id="myChart-20"></canvas>
+            </div>
+            <h3>Annual Wages</h3>
+            <p>&#40;Your Wage Vs. Living Wage&#41</p>
+            <div class="chart-one">
+                <canvas id="myChart-25" ></canvas>
+            </div>
+          </main>
         </div>
-        <h3>Annual Wages</h3>
-        <p>&#40;For Minimum Wage And Living Wage&#41</p>
-        <div class="chart-one">
-            <canvas id="myChart-8" ></canvas>
-          </div>
-    </main>
-    <!-- Couple Section -->
-    <main class="light-background">
-      <h3>Couples With No Children</h3>
-      <p>&#40;One Adult Working&#41</p>
-      <div class="chart-one">
-          <canvas id="myChart-9"></canvas>
-        </div>
-        <h3>Annual Wages</h3>
-        <p>&#40;For Minimum Wage And Living Wage&#41</p>
-        <div class="chart-one">
-            <canvas id="myChart-10" ></canvas>
-          </div>
-    </main>
-    <main class="dark-background">
-      <h3>Couples With One Child</h3>
-      <p>&#40;One Adult Working&#41</p>
-      <div class="chart-one">
-          <canvas id="myChart-11"></canvas>
-        </div>
-        <h3>Annual Wages</h3>
-        <p>&#40;For Minimum Wage And Living Wage&#41</p>
-        <div class="chart-one">
-            <canvas id="myChart-12" ></canvas>
-          </div>
-    </main>
-    <main class="light-background">
-      <h3>Couples With Two Children</h3>
-      <p>&#40;One Adult Working&#41</p>
-      <div class="chart-one">
-          <canvas id="myChart-13"></canvas>
-        </div>
-        <h3>Annual Wages</h3>
-        <p>&#40;For Minimum Wage And Living Wage&#41</p>
-        <div class="chart-one">
-            <canvas id="myChart-14" ></canvas>
-          </div>
-    </main>
-    <main class="dark-background">
-      <h3>Couples With Three Children</h3>
-      <p>&#40;One Adult Working&#41</p>
-      <div class="chart-one">
-          <canvas id="myChart-15"></canvas>
-        </div>
-        <h3>Annual Wages</h3>
-        <p>&#40;For Minimum Wage And Living Wage&#41</p>
-        <div class="chart-one">
-            <canvas id="myChart-16" ></canvas>
-          </div>
-    </main>
-    <!-- Industry Section -->
-    <main class="light-background " >
-      <h3>Industry Wages</h3>
-      <p>&#40; Average Annual &#41</p>
-      <div class="chart-one industry">
-          <canvas id="myChart-17"></canvas>
-        </div>
-    </main>
-    </div>
-    
-    <div class="compare hidden">
-      <main class="dark-background">
-        <h3 class="title">Your Wage Vs. Living Wage</h3>
-        <form on:change|preventDefault="{handleOnSubmit}">
-          <label for="yourWage">Enter Your Hourly Wage $
-          <input type="number" name="yourWage" bind:value={yourWage} step=".01"/>
-        </label>
-        </form>
-        <p class='btn-text'> You must refresh page to enter a new wage, click to
-        <button class="btn-2" on:click={() => location.reload()}>Refresh</button>
-      </p>
-        <div class="chart-one">
-            <canvas id="myChart-20"></canvas>
-        </div>
-        <h3>Annual Wages</h3>
-        <p>&#40;Your Wage Vs. Living Wage&#41</p>
-        <div class="chart-one">
-            <canvas id="myChart-25" ></canvas>
-        </div>
-      </main>
     </div>
     
     
@@ -1232,7 +1235,7 @@
     
         .chart-one {
             display: grid;
-            width: 40dvw;
+            width: 80dvw;
             height: 30dvh;
             background-color: #424242;
             margin-top: 1em;

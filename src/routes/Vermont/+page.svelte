@@ -1232,7 +1232,7 @@
     
         .chart-one {
             display: grid;
-            width: 40dvw;
+            width: 80dvw;
             height: 30dvh;
             background-color: #424242;
             margin-top: 1em;

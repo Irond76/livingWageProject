@@ -51,5 +51,10 @@ let stateNames = states
         width: fit-content;
         align-items: center;
     }
+    @media screen and (max-width: 550px) {
+        .state-names {
+            grid-template-columns: 1fr 1fr;
+        }
+    }
     
 </style>
