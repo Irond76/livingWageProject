@@ -952,7 +952,7 @@
           plugins: {
             title: {
                     display: true,
-                    text: 'Your Wage Vs. Living Wage in $ per hour',
+                    text: 'Your Wage Vs. Living Wage in $ per hour (single w/ no children)',
                     color: '#fff'
                 },
             legend: {
@@ -1003,7 +1003,7 @@
           plugins: {
             title: {
                     display: true,
-                    text: 'Your Wage Vs. Living Wage in $ per hour',
+                    text: 'Your Wage Vs. Living Wage in $ per hour (single w/ no children)',
                     color: '#fff'
                 },
             legend: {
